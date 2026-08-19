@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 222 90% 31%;
+    --secondary: 0 100% 50%;
+    --accent: 60 100% 50%;
+    --muted: 210 40% 96.1%;
+    --border: 214.3 31.8% 91.4%;
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative px-3 py-2 text-sm font-medium transition-colors hover:text-ghanafc-primary;
+  }
+
+  /* Shown on hover of the wrapping .group element */
+  .dropdown-menu {
+    @apply absolute top-full left-0 z-50 mt-1 hidden min-w-[200px] rounded bg-white p-2 shadow-md;
+  }
+  .group:hover .dropdown-menu {
+    @apply block;
+  }
+
+  .btn-primary {
+    @apply rounded bg-ghanafc-primary px-5 py-2 font-semibold text-white transition-all hover:bg-red-800;
+  }
+
+  .btn-secondary {
+    @apply rounded bg-ghanafc-secondary px-5 py-2 font-semibold text-white transition-all hover:bg-green-900;
+  }
+}
