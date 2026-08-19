@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { club } from '../data/content'
 
 type NavChild = { label: string; to: string }
 
 const myClubLinks: NavChild[] = [
   { label: 'Donations', to: '/my-prampram-youth-fc#donations' },
   { label: 'Sponsorship Opportunities', to: '/my-prampram-youth-fc#sponsorship-opportunities' },
-  { label: 'Sponsor a Player', to: '/my-prampram-youth-fc#sponsor-a-player' },
+  { label: 'Sponsor a Player', to: '/sponsor-a-player' },
 ]
 
 const clubInfoLinks: NavChild[] = [
@@ -87,8 +88,16 @@ export default function Header() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <Link to="/my-prampram-youth-fc#donations" className="btn-primary hidden md:block">
-            Support Us
+          <a
+            href={club.staffPortalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden text-sm font-medium text-gray-600 hover:text-ghanafc-primary lg:block"
+          >
+            Staff Login
+          </a>
+          <Link to="/sponsor-a-player" className="btn-primary hidden md:block">
+            Sponsor a Player
           </Link>
         </div>
       </div>
@@ -155,12 +164,23 @@ export default function Header() {
               </Link>
             </div>
             <div>
+              <a
+                href={club.staffPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 text-gray-600"
+                onClick={close}
+              >
+                Staff Login
+              </a>
+            </div>
+            <div>
               <Link
-                to="/my-prampram-youth-fc#donations"
+                to="/sponsor-a-player"
                 className="btn-primary block text-center"
                 onClick={close}
               >
-                Support Us
+                Sponsor a Player
               </Link>
             </div>
           </nav>

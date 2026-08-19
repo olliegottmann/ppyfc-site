@@ -4,6 +4,8 @@ export const club = {
   name: 'Prampram Youth FC',
   email: 'info@ppyfc.com',
   partnershipsEmail: 'partnerships@ppyfc.com',
+  /** Staff-only player platform. Separate system, separate database - linked, never embedded. */
+  staffPortalUrl: 'https://prampram-platform.vercel.app',
   blurb:
     'Prampram Youth FC is a grassroots football club based in Prampram, Greater Accra Region. The club is dedicated to developing young talent and making a positive impact in the local community. It operates under the registered charity KRA Football Academy, with registration number NPOS/GR01/LN02499/25.',
 }

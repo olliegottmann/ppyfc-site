@@ -9,6 +9,7 @@ import ClubInfo from './pages/ClubInfo'
 import CoachingStaff from './pages/CoachingStaff'
 import Photos from './pages/Photos'
 import Partners from './pages/Partners'
+import SponsorAPlayer from './pages/SponsorAPlayer'
 import NotFound from './pages/NotFound'
 
 /**
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/coaching-staff" element={<CoachingStaff />} />
           <Route path="/photos" element={<Photos />} />
           <Route path="/partners" element={<Partners />} />
+          <Route path="/sponsor-a-player" element={<SponsorAPlayer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

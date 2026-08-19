@@ -108,8 +108,8 @@ export default function Home() {
             <Link to="/photos" className="transition-colors hover:text-yellow-400">
               Our Photos
             </Link>
-            <Link to="/partners" className="transition-colors hover:text-yellow-400">
-              Support Us
+            <Link to="/sponsor-a-player" className="transition-colors hover:text-yellow-400">
+              Sponsor a Player
             </Link>
           </div>
           <div className="mt-8 text-sm opacity-75">
