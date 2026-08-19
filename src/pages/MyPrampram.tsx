@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import { club, comingFeatures, earlyAccessPerks } from '../data/content'
+import { Link } from 'react-router-dom'
+import { comingFeatures, earlyAccessPerks } from '../data/content'
 import NewsletterForm from '../components/NewsletterForm'
+import { SPONSORSHIP } from '../data/players'
 
 /**
  * Target for the "Countdown to next Season" clock. The original site had this
  * baked into the bundle with no way to edit it - change the date here.
  */
 const NEXT_SEASON_START = new Date('2026-11-21T12:00:00Z')
-
-const DONATION_AMOUNTS = [10, 25, 50, 100]
 
 function useCountdown(target: Date) {
   const [now, setNow] = useState(() => Date.now())
@@ -29,15 +29,6 @@ function useCountdown(target: Date) {
 
 export default function MyPrampram() {
   const { days, hours, minutes, seconds } = useCountdown(NEXT_SEASON_START)
-  const [amount, setAmount] = useState<number | null>(null)
-  const [custom, setCustom] = useState('')
-
-  const chosen = amount !== null ? String(amount) : custom
-  const donateHref = `mailto:${club.email}?subject=${encodeURIComponent(
-    'I would like to donate to Prampram Youth FC',
-  )}&body=${encodeURIComponent(
-    `I would like to donate${chosen ? ` $${chosen}` : ''} to Prampram Youth FC. Please send me payment details.`,
-  )}`
 
   const units = [
     { value: days, label: 'DAYS' },
@@ -128,57 +119,20 @@ export default function MyPrampram() {
             </div>
           </div>
 
-          <div id="donations" className="mx-auto max-w-2xl rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
-            <h3 className="mb-4 text-2xl font-bold text-green-300">Donations - Support Us Now!</h3>
+          <div className="mx-auto max-w-2xl rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
+            <h3 className="mb-4 text-2xl font-bold text-green-300">Back a player this season</h3>
             <p className="mb-6 opacity-90">
               While we&rsquo;re building your personalized experience, you can still make a
-              difference today. Every donation helps us get closer to our dreams.
+              difference today. {SPONSORSHIP.symbol}
+              {SPONSORSHIP.monthly} a month backs one young footballer through the{' '}
+              {SPONSORSHIP.season} season.
             </p>
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                {DONATION_AMOUNTS.map((a) => (
-                  <button
-                    key={a}
-                    type="button"
-                    onClick={() => {
-                      setAmount(a)
-                      setCustom('')
-                    }}
-                    className={`rounded-lg px-4 py-3 font-bold transition-colors ${
-                      amount === a
-                        ? 'bg-white text-ghanafc-primary'
-                        : 'bg-ghanafc-accent text-black hover:bg-yellow-300'
-                    }`}
-                  >
-                    ${a}
-                  </button>
-                ))}
-              </div>
-              <div className="flex gap-3">
-                <input
-                  type="number"
-                  min="1"
-                  value={custom}
-                  onChange={(e) => {
-                    setCustom(e.target.value)
-                    setAmount(null)
-                  }}
-                  placeholder="Custom amount"
-                  aria-label="Custom donation amount"
-                  className="flex-1 rounded-lg border border-white/30 bg-white/20 px-4 py-3 text-white placeholder-white/70 focus:border-ghanafc-accent focus:outline-none"
-                />
-                <a
-                  href={donateHref}
-                  className="rounded-lg bg-white px-6 py-3 font-bold text-ghanafc-primary transition-colors hover:bg-gray-100"
-                >
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            <p className="mt-4 text-xs opacity-75">
-              Online payments are not connected yet - this opens an email to {club.email} and the
-              club will send you payment details. 100% goes to player development.
-            </p>
+            <Link
+              to="/sponsor-a-player"
+              className="inline-block rounded-lg bg-ghanafc-accent px-8 py-4 text-lg font-bold text-black transition-colors hover:bg-yellow-300"
+            >
+              Sponsor a Player
+            </Link>
           </div>
 
           <div className="mt-12">

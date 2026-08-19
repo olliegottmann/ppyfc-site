@@ -72,9 +72,10 @@ Taken from the original site (the Ghana flag palette):
 
 These were inherited from the original site and still need decisions:
 
-- **Donations take no money.** There is no payment processor connected. The
-  donate button opens an email to the club instead. Paystack is the usual
-  choice for Ghana; Stripe does not support Ghanaian payouts.
+- **Sponsorship is arranged by email.** No payment processor is connected, so
+  `src/data/payment.ts` is disabled and choosing a player opens an email to the
+  club. Donations were removed from the site entirely in favour of the
+  per-player sponsorship model.
 - **Newsletter signups are not stored.** The form opens an email to the club.
   Connecting Mailchimp, Buttondown or similar would fix this properly.
 - **No privacy, terms or cookie policy pages.** The cookie banner refers to a

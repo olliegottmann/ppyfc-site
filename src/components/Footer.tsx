@@ -20,7 +20,6 @@ const clubInfoLinks = [
 ]
 
 const supportLinks = [
-  { label: 'Donations', to: '/my-prampram-youth-fc#donations' },
   { label: 'Sponsorship Opportunities', to: '/my-prampram-youth-fc#sponsorship-opportunities' },
   { label: 'Sponsor a Player', to: '/sponsor-a-player' },
 ]

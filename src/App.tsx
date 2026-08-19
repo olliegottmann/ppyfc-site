@@ -13,7 +13,7 @@ import SponsorAPlayer from './pages/SponsorAPlayer'
 import NotFound from './pages/NotFound'
 
 /**
- * The nav links into #history, #donations and friends. React Router does not
+ * The nav links into #history, #management-team and friends. React Router does not
  * scroll to a hash on its own, so do it here once the target has rendered.
  */
 function ScrollToTarget() {

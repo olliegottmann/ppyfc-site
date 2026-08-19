@@ -70,7 +70,7 @@ export default function Home() {
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Our Need</h2>
           <div className="mx-auto max-w-3xl">
             <p className="mb-8 text-xl leading-relaxed md:text-2xl">
-              Every donation, every supporter, every shared story brings us closer to changing lives
+              Every sponsor, every supporter, every shared story brings us closer to changing lives
               through football.
             </p>
             <p className="mb-8 text-lg">
