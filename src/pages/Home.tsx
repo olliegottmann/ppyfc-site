@@ -80,7 +80,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                to="/partners"
+                to="/sponsors"
                 className="rounded-lg bg-black px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-gray-800"
               >
                 Support Our Vision

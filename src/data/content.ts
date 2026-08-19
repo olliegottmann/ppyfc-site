@@ -3,7 +3,7 @@
 export const club = {
   name: 'Prampram Youth FC',
   email: 'info@ppyfc.com',
-  partnershipsEmail: 'partnerships@ppyfc.com',
+  sponsorshipEmail: 'partnerships@ppyfc.com',
   /** Staff-only player platform. Separate system, separate database - linked, never embedded. */
   staffPortalUrl: 'https://prampram-platform.vercel.app',
   blurb:
@@ -116,21 +116,21 @@ export const impactAreas = [
   "Local Football Ecosystem Support - Contributing to Prampram's emergence as a football hub",
 ]
 
-export const partnershipTypes = [
+export const sponsorshipTypes = [
   {
     title: 'Youth Development Sponsors',
     description: 'Support our training programmes and youth academy initiatives',
   },
   {
-    title: 'Equipment Partners',
+    title: 'Equipment Sponsors',
     description: 'Provide football equipment and training gear for our players',
   },
   {
-    title: 'Educational Partners',
+    title: 'Educational Sponsors',
     description: 'Collaborate on education and football development programmes',
   },
   {
-    title: 'Community Partners',
+    title: 'Community Sponsors',
     description: 'Join us in community outreach and social impact initiatives',
   },
 ]

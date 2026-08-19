@@ -65,8 +65,8 @@ export default function Header() {
           <Link to="/photos" className="nav-link">
             Photos
           </Link>
-          <Link to="/partners" className="nav-link">
-            Partners
+          <Link to="/sponsors" className="nav-link">
+            Our Sponsors
           </Link>
         </nav>
 
@@ -158,8 +158,8 @@ export default function Header() {
               <Link to="/photos" className="block py-2 font-bold" onClick={close}>
                 Photos
               </Link>
-              <Link to="/partners" className="block py-2 font-bold" onClick={close}>
-                Partners
+              <Link to="/sponsors" className="block py-2 font-bold" onClick={close}>
+                Our Sponsors
               </Link>
             </div>
             <div>

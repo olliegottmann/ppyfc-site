@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
@@ -8,7 +8,7 @@ import MyPrampram from './pages/MyPrampram'
 import ClubInfo from './pages/ClubInfo'
 import CoachingStaff from './pages/CoachingStaff'
 import Photos from './pages/Photos'
-import Partners from './pages/Partners'
+import Sponsors from './pages/Sponsors'
 import SponsorAPlayer from './pages/SponsorAPlayer'
 import NotFound from './pages/NotFound'
 
@@ -43,7 +43,9 @@ export default function App() {
           <Route path="/club-info" element={<ClubInfo />} />
           <Route path="/coaching-staff" element={<CoachingStaff />} />
           <Route path="/photos" element={<Photos />} />
-          <Route path="/partners" element={<Partners />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+          {/* Old URL from the previous site - keep it working rather than 404 */}
+          <Route path="/partners" element={<Navigate to="/sponsors" replace />} />
           <Route path="/sponsor-a-player" element={<SponsorAPlayer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

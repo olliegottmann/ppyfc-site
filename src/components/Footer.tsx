@@ -7,7 +7,7 @@ const quickLinks = [
   { label: 'Club Info', to: '/club-info' },
   { label: 'Coaching Staff', to: '/coaching-staff' },
   { label: 'Photos', to: '/photos' },
-  { label: 'Partners', to: '/partners' },
+  { label: 'Our Sponsors', to: '/sponsors' },
 ]
 
 const clubInfoLinks = [
@@ -15,7 +15,7 @@ const clubInfoLinks = [
   { label: 'Management Team', to: '/club-info#management-team' },
   { label: 'Ownership', to: '/club-info#ownership' },
   { label: 'CSR / Social Impact', to: '/club-info#csr' },
-  { label: 'Regional Partners', to: '/partners' },
+  { label: 'Sponsorship', to: '/sponsors' },
   { label: 'Contact Us', to: '/my-prampram-youth-fc' },
 ]
 

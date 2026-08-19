@@ -1,15 +1,22 @@
 import { Link } from 'react-router-dom'
-import { club, partnershipTypes } from '../data/content'
+import { club, sponsorshipTypes } from '../data/content'
 
-export default function Partners() {
+export default function Sponsors() {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Partners</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Sponsors</h2>
           <p className="mx-auto max-w-2xl text-gray-600">
-            Prampram Youth FC is actively seeking partnerships with organisations that share our
-            vision for youth development and community impact.
+            Prampram Youth FC is actively seeking sponsors who share our vision for youth
+            development and community impact.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-500">
+            Sponsoring as an individual?{' '}
+            <Link to="/sponsor-a-player" className="text-ghanafc-primary underline">
+              Back a player for the season
+            </Link>{' '}
+            instead.
           </p>
         </div>
 
@@ -32,21 +39,21 @@ export default function Partners() {
             </div>
             <h3 className="mb-4 text-3xl font-bold text-ghanafc-primary">Coming Soon</h3>
             <p className="mb-6 text-lg text-gray-700">
-              We are currently building partnerships with local businesses, educational
+              We are currently building relationships with local businesses, educational
               institutions, and community organisations to support our youth development
               programmes.
             </p>
             <p className="mb-8 text-gray-600">
-              Our partnership opportunities will include sponsorship packages, community outreach
-              programmes, and collaborative initiatives that benefit both our club and the wider
-              Prampram community.
+              Our sponsorship opportunities will include club sponsorship packages, community
+              outreach programmes, and collaborative initiatives that benefit both our club and the
+              wider Prampram community.
             </p>
             <div className="space-y-4">
               <h4 className="text-xl font-semibold text-ghanafc-primary">
-                Partnership Opportunities
+                Sponsorship Opportunities
               </h4>
               <div className="grid grid-cols-1 gap-4 text-left md:grid-cols-2">
-                {partnershipTypes.map((p) => (
+                {sponsorshipTypes.map((p) => (
                   <div key={p.title} className="rounded-lg bg-white p-4 shadow-sm">
                     <h5 className="mb-2 font-semibold text-ghanafc-secondary">{p.title}</h5>
                     <p className="text-sm text-gray-600">{p.description}</p>
@@ -58,17 +65,17 @@ export default function Partners() {
         </div>
 
         <div className="mt-16 rounded-lg bg-ghanafc-primary p-8 text-center text-white shadow-md">
-          <h3 className="mb-4 text-2xl font-bold">Interested in Partnering with Us?</h3>
+          <h3 className="mb-4 text-2xl font-bold">Interested in Sponsoring Us?</h3>
           <p className="mb-6 text-lg">
-            We welcome partnerships that align with our mission of developing young talent and
+            We welcome sponsors who align with our mission of developing young talent and
             strengthening our community through football.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href={`mailto:${club.partnershipsEmail}`}
+              href={`mailto:${club.sponsorshipEmail}`}
               className="rounded-lg bg-white px-6 py-3 font-semibold text-ghanafc-primary transition-colors hover:bg-gray-100"
             >
-              Contact Us About Partnerships
+              Contact Us About Sponsorship
             </a>
             <Link
               to="/club-info"
