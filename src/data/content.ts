@@ -116,6 +116,32 @@ export const impactAreas = [
   "Local Football Ecosystem Support - Contributing to Prampram's emergence as a football hub",
 ]
 
+/**
+ * Club sponsors for the current season.
+ *
+ * Logos go in public/sponsors/. Use the artwork the sponsor supplies rather
+ * than one pulled off their website, and check the wording below with them
+ * before it goes live - it is their name on it.
+ */
+export const sponsors = [
+  {
+    name: 'SteelPhalt',
+    logo: '/sponsors/steelphalt.png',
+    url: 'https://www.steelphalt.com/',
+    tagline: 'Sustainable asphalt, Rotherham',
+    blurb:
+      'SteelPhalt has been turning steel slag into high-performance asphalt at its Rotherham plant since 1963, and is now part of Enviri. Every product it makes uses 95% recycled material, cutting the need for quarried aggregate while giving steelmakers a use for a by-product that would otherwise go to waste.',
+  },
+  {
+    name: 'Doordeals',
+    logo: '/sponsors/doordeals.png',
+    url: 'https://www.doordeals.co.uk/',
+    tagline: 'Independent door retailer, Chesterfield',
+    blurb:
+      "Doordeals is one of the UK's leading independent online timber door retailers, supplying internal, external and fire doors nationwide from its base in Chesterfield. The business traces its roots to a single Sheffield shop opened in 1971 and has been selling online since 2007.",
+  },
+]
+
 export const sponsorshipTypes = [
   {
     title: 'Youth Development Sponsors',

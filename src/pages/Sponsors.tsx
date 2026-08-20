@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { club, sponsorshipTypes } from '../data/content'
+import { club, sponsors, sponsorshipTypes } from '../data/content'
+import SponsorCard from '../components/SponsorCard'
+import { SPONSORSHIP } from '../data/players'
 
 export default function Sponsors() {
   return (
@@ -8,10 +10,47 @@ export default function Sponsors() {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Sponsors</h2>
           <p className="mx-auto max-w-2xl text-gray-600">
-            Prampram Youth FC is actively seeking sponsors who share our vision for youth
-            development and community impact.
+            Prampram Youth FC is backed by businesses who believe that talent deserves an
+            opportunity, wherever it is found.
           </p>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-500">
+        </div>
+
+        <div className="mb-16">
+          <h3 className="mb-6 text-center text-sm font-bold uppercase tracking-widest text-ghanafc-secondary">
+            {SPONSORSHIP.season} Season Sponsors
+          </h3>
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+            {sponsors.map((s) => (
+              <SponsorCard key={s.name} {...s} />
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm text-gray-500">
+            Our thanks to both for supporting the club this season.
+          </p>
+        </div>
+
+        <div className="rounded-lg bg-gray-50 p-8 shadow-md lg:p-12">
+          <div className="mb-8 text-center">
+            <h3 className="mb-4 text-2xl font-bold text-ghanafc-primary md:text-3xl">
+              Become a Sponsor
+            </h3>
+            <p className="mx-auto max-w-2xl text-gray-700">
+              We are building relationships with businesses, educational institutions and community
+              organisations to support our youth development programmes. Sponsorship packages range
+              from kit and equipment through to season-long club partnerships.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 text-left md:grid-cols-2">
+            {sponsorshipTypes.map((p) => (
+              <div key={p.title} className="rounded-lg bg-white p-4 shadow-sm">
+                <h4 className="mb-2 font-semibold text-ghanafc-secondary">{p.title}</h4>
+                <p className="text-sm text-gray-600">{p.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-sm text-gray-500">
             Sponsoring as an individual?{' '}
             <Link to="/sponsor-a-player" className="text-ghanafc-primary underline">
               Back a player for the season
@@ -20,51 +59,7 @@ export default function Sponsors() {
           </p>
         </div>
 
-        <div className="py-16 text-center">
-          <div className="mx-auto max-w-2xl rounded-lg bg-gray-50 p-12 shadow-md">
-            <div className="mb-8">
-              <svg
-                className="mx-auto mb-6 h-24 w-24 text-ghanafc-primary"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-3xl font-bold text-ghanafc-primary">Coming Soon</h3>
-            <p className="mb-6 text-lg text-gray-700">
-              We are currently building relationships with local businesses, educational
-              institutions, and community organisations to support our youth development
-              programmes.
-            </p>
-            <p className="mb-8 text-gray-600">
-              Our sponsorship opportunities will include club sponsorship packages, community
-              outreach programmes, and collaborative initiatives that benefit both our club and the
-              wider Prampram community.
-            </p>
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-ghanafc-primary">
-                Sponsorship Opportunities
-              </h4>
-              <div className="grid grid-cols-1 gap-4 text-left md:grid-cols-2">
-                {sponsorshipTypes.map((p) => (
-                  <div key={p.title} className="rounded-lg bg-white p-4 shadow-sm">
-                    <h5 className="mb-2 font-semibold text-ghanafc-secondary">{p.title}</h5>
-                    <p className="text-sm text-gray-600">{p.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16 rounded-lg bg-ghanafc-primary p-8 text-center text-white shadow-md">
+        <div className="mt-12 rounded-lg bg-ghanafc-primary p-8 text-center text-white shadow-md">
           <h3 className="mb-4 text-2xl font-bold">Interested in Sponsoring Us?</h3>
           <p className="mb-6 text-lg">
             We welcome sponsors who align with our mission of developing young talent and
