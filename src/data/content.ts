@@ -126,7 +126,7 @@ export const impactAreas = [
 export const sponsors = [
   {
     name: 'SteelPhalt',
-    logo: '/sponsors/steelphalt.png',
+    logo: '/sponsors/steelphalt.jpg',
     url: 'https://www.steelphalt.com/',
     tagline: 'Sustainable asphalt, Rotherham',
     blurb:
@@ -134,7 +134,7 @@ export const sponsors = [
   },
   {
     name: 'Doordeals',
-    logo: '/sponsors/doordeals.png',
+    logo: '/sponsors/doordeals.jpg',
     url: 'https://www.doordeals.co.uk/',
     tagline: 'Independent door retailer, Chesterfield',
     blurb:
