@@ -19,10 +19,10 @@ function matchesAge(player: SquadPlayer, filter: AgeFilter) {
 
 function PlayerCard({ player }: { player: SquadPlayer }) {
   const subject = encodeURIComponent(
-    `Sponsor a player - #${player.number} ${player.firstName}`,
+    `Sponsor a player - ${player.label} (${player.role})`,
   )
   const body = encodeURIComponent(
-    `I would like to sponsor #${player.number} ${player.firstName} (${player.position}, age ${player.age}) ` +
+    `I would like to sponsor ${player.label}, ${player.role}, age ${player.age}, ` +
       `for the ${SPONSORSHIP.season} season at ${SPONSORSHIP.symbol}${SPONSORSHIP.monthly} a month.\n\n` +
       `Please send me the details of how to set this up.`,
   )
@@ -30,8 +30,8 @@ function PlayerCard({ player }: { player: SquadPlayer }) {
   return (
     <div className="flex flex-col rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-3 flex items-start justify-between">
-        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-ghanafc-primary text-lg font-black text-white">
-          {player.number}
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-ghanafc-primary text-base font-black text-white">
+          {player.label.charAt(0)}
         </div>
         {player.available ? (
           <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-ghanafc-secondary">
@@ -44,8 +44,8 @@ function PlayerCard({ player }: { player: SquadPlayer }) {
         )}
       </div>
 
-      <h3 className="text-lg font-bold text-ghanafc-dark">{player.firstName}</h3>
-      <p className="text-sm text-ghanafc-secondary">{player.position}</p>
+      <h3 className="text-lg font-bold text-ghanafc-dark">{player.label}</h3>
+      <p className="text-sm text-ghanafc-secondary">{player.role}</p>
       <p className="mb-4 text-sm text-gray-500">Age {player.age}</p>
 
       <div className="mt-auto">
@@ -85,7 +85,7 @@ export default function SponsorAPlayer() {
         position: pos,
         players: filtered
           .filter((p) => p.position === pos)
-          .sort((a, b) => a.number - b.number),
+          .sort((a, b) => a.label.localeCompare(b.label)),
       })).filter((g) => g.players.length > 0),
     [filtered],
   )
@@ -188,7 +188,7 @@ export default function SponsorAPlayer() {
                 </h2>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {group.players.map((p) => (
-                    <PlayerCard key={p.number} player={p} />
+                    <PlayerCard key={p.id} player={p} />
                   ))}
                 </div>
               </div>
@@ -196,9 +196,9 @@ export default function SponsorAPlayer() {
           )}
 
           <div className="mt-8 rounded-lg border border-gray-200 bg-gray-50 p-6 text-sm text-gray-600">
-            <p className="mb-2">
-              <strong className="text-ghanafc-dark">A note on our players.</strong> Everyone in this
-              squad is a minor. We list a first name, position and age only — no surnames, no
+            <p>
+              <strong className="text-ghanafc-dark">A note on our players.</strong> Many of this
+              squad are under 18, so players are identified by initial only — no names, no
               photographs and no contact details. Sponsors support a place in the squad, not a
               personal relationship with a child, and all contact runs through the club.
             </p>
