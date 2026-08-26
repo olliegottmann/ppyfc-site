@@ -19,13 +19,13 @@ export default function Sponsors() {
           <h3 className="mb-6 text-center text-sm font-bold uppercase tracking-widest text-ghanafc-secondary">
             {SPONSORSHIP.season} Season Sponsors
           </h3>
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {sponsors.map((s) => (
               <SponsorCard key={s.name} {...s} />
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-gray-500">
-            Our thanks to both for supporting the club this season.
+            Our thanks to each of them for supporting the club this season.
           </p>
         </div>
 

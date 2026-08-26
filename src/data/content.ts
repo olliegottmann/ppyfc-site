@@ -140,6 +140,14 @@ export const sponsors = [
     blurb:
       "Doordeals is one of the UK's leading independent online timber door retailers, supplying internal, external and fire doors nationwide from its base in Chesterfield. The business traces its roots to a single Sheffield shop opened in 1971 and has been selling online since 2007.",
   },
+  {
+    name: 'Admiral Homes',
+    logo: '/sponsors/admiral-homes.png',
+    url: 'https://www.admiralhomesgh.com/',
+    tagline: 'Residential developer, Accra',
+    blurb:
+      'Admiral Homes is a family-owned Ghanaian property developer building small residential schemes - two to eight units - in established parts of Accra. Completed developments include East Legon, East Airport, Adjiringanor and Tse Addo, with Kingshasa and Airport West currently under construction.',
+  },
 ]
 
 export const sponsorshipTypes = [
@@ -193,4 +201,19 @@ export const earlyAccessPerks = [
   'Direct messaging with coaching staff',
   'Virtual training session access',
   'Monthly impact reports',
+]
+
+/**
+ * Photographs that rotate behind the landing page headline.
+ *
+ * Team and training shots only - the landing page is not the place to put a
+ * single identifiable player front and centre. Paths are URL-encoded because
+ * the filenames carry spaces.
+ */
+export const heroImages = [
+  '/homepage.jpg',
+  '/photos/WhatsApp%20Image%202025-05-14%20at%2020.27.23.jpeg',
+  '/photos/WhatsApp%20Image%202025-05-14%20at%2020.26.34%20(2).jpeg',
+  '/photos/WhatsApp%20Image%202025-05-14%20at%2020.26.50%20(2).jpeg',
+  '/photos/WhatsApp%20Image%202025-05-14%20at%2020.26.28.jpeg',
 ]
